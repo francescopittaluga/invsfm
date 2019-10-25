@@ -1,9 +1,3 @@
-```diff
-! InvSFM code is temporarily unavailable due to licensing issues. 
-! The code should be back up soon with a new license.
-```
----
-
 # InvSFM: Revealing Scenes by Inverting Structure from Motion Reconstructions 
 
 ![teaser figure](teaser.png)
@@ -24,6 +18,48 @@ If you use this code/model for your research, please cite the following paper:
   year={2019}
 }
 ```
+
+
+
+## Installation Guide
+
+The code was tested with Tensorflow 1.10, Ubuntu 16, NVIDIA TitanX / NVIDIA 1080ti.
+
+### Step 1: Install dependencies
+
+See `requirements.txt`. The training code depends only on tensorflow. The demos additionally depend on Pillow and scikit-image. 
+
+### Step 2: Download the pre-trained model weights 
+
+Run `$ bash download_wts.sh` to programatically download and untar `wts.tar.gz` (1.24G). Alternatively, manually download `wts.tar.gz` from [here](https://drive.google.com/open?id=1D2uYQmrZaZPngDi1U8aSPoXdzuAnEwhb) and untar it in the root directory of the repo.
+
+### Step 3: Download the demo data
+
+Run `$ bash download_data.sh` to programatically download and untar `data.tar.gz` (11G). Alternatively, manually download `data.tar.gz` from [here](https://drive.google.com/open?id=1StpUiEauckZcxHZeBzoq6L2K7pcB9v3E) and untar it in the root directory of the repo.
+
+### Step 4: Run the demos
+
+```
+$ python demo_5k.py 
+$ python demo_colmap.py
+```
+Note: Run `$ python demo_5k.py --help` and `$ python demo_colmap.py --help` to see the various demo options available.
+
+### Step 5: Run the training scripts
+
+```
+$ python train_visib.py 
+$ python train_coarse.py 
+$ python train_refine.py 
+```
+Note: Run `$ python train_*.py --help` to see the various training options available.
+
+
+
+
+
+
+
 
 
 
