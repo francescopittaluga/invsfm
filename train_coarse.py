@@ -51,9 +51,9 @@ parser.add_argument("--batch_size", type=int, default=4, help="%(type)s: Number 
 parser.add_argument("--crop_size", type=int, default=256, help="%(type)s: Size to crop images to (default: %(default)s)")
 parser.add_argument("--scale_size", type=lambda s: [int(i) for i in s.split(',')], default=[296,394,512],
                     help="int,int,int: Sizes to randomly scale images to before cropping them (default: 296,394,512)")
-parser.add_argument("--pct_3D_points", type=lambda s: [float(i) for i in s.split(',')][:2], default=[.05,1.0],
+parser.add_argument("--pct_3D_points", type=lambda s: [float(i) for i in s.split(',')][:2], default=[5.,100.],
                     help="float,float: Min and max percent of 3D points to keep when performing random subsampling for data augmentation "+\
-                    "(default: .05,1.0)")
+                    "(default: 5.,100.)")
 parser.add_argument("--per_loss_wt", type=float, default=1., help="%(type)s: Perceptual loss weight (default: %(default)s)")
 parser.add_argument("--pix_loss_wt", type=float, default=1., help="%(type)s: Pixel loss weight (default: %(default)s)")
 parser.add_argument("--max_iter", type=int, default=1e6, help="%(type)s: Stop training after MAX_ITER iterations (default: %(default)s)")
